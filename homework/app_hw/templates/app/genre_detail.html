@@ -1,0 +1,16 @@
+{% extends 'app/base.html' %}
+{% block title %}
+    Category Page
+{% endblock %}
+
+{% block content %}
+<!--    {% for musicians in musician %}-->
+<!--        <p>{{ musicians }}</p>-->
+<!--        <p><a href="">details</a></p>-->
+<!--    {% endfor %}-->
+    <h1>{{ genre.name }}</h1>
+    {% for musician in musicians %}
+        <p><a href="{% url 'musician_detail' genre.pk musician.slug %}">{{ musician.name }}</a></p>
+    {% endfor %}
+
+{% endblock content %}
